@@ -3,6 +3,11 @@
 	accessories for body parts can be found in  genesis fe Hat game, just search Foundation
     Accessories:
     Starless Man V3 = 5699795428
+	v1.3, just realised malleks theme is on roblox store
+	added it as a them song
+song name is:
+"fortnite funny moments epic fails episode 413"
+413???
 
 ]]
 
@@ -41,9 +46,9 @@ local function stopSoundById(soundId)
 		soundCache[formattedId] = nil
 	end
 end
-playSoundById(125693424013779, workspace)
+playSoundById(138984273283659, workspace)
 local function stopAllSounds()
-    stopSoundById(125693424013779)
+    stopSoundById(138984273283659)
 end
 local osclock=os.clock
 local tspawn=task.spawn
@@ -255,7 +260,7 @@ local accessorylimbs={
 
 -- MY OWN LUAU GUY
 
--- HAMMER HEAD
+-- amrs HEAD
 	{meshid="76059801901084",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Left Arm"},
 	{meshid="132748707398327",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Right Arm"},
 -- LEGS
@@ -264,6 +269,25 @@ local accessorylimbs={
 --torso
 	{meshid="140136825709676",textureid="",C0=cf_0,Name="Torso"},
 
+
+-- red dude
+	{meshid="95431948173296",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Left Arm"},
+	{meshid="102501811981637",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Right Arm"},
+-- LEGS
+	{meshid="134328437974880",textureid="",C0=angles(0,0,0),Name="Left Leg"},
+	{meshid="113603365099136",textureid="",C0=angles(0,0,0),Name="Right Leg"},
+--torso
+	{meshid="121342720235244",textureid="",C0=cf_0,Name="Torso"},
+
+
+-- greeb dude
+	{meshid="119465281752182",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Left Arm"},
+	{meshid="94765532803281",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Right Arm"},
+-- LEGS
+	{meshid="103235686024347",textureid="",C0=angles(0,0,0),Name="Left Leg"},
+	{meshid="80187894108602",textureid="",C0=angles(0,0,0),Name="Right Leg"},
+--torso
+	{meshid="80519708242308",textureid="",C0=cf_0,Name="Torso"},
 
 
 --END
@@ -609,7 +633,7 @@ local charcons={}
 local flingtable={}
 local onnewcamera=nil
 local stopreanimate=function() 
-    playSoundById(125693424013779, workspace)
+    playSoundById(138984273283659, workspace)
 	if c then
 		c=nil
 		for i,v in next,cframes do
@@ -2142,7 +2166,7 @@ btn("Starless Man V3", function()
 -- -gh 14255556501, 14255554762, 14768693948, 14768701869, 14255528083, 104498387508889, 5699795428
 	local t=reanimate()
 	if type(t)~="table" then return end
-    stopSoundById(125693424013779)
+    stopSoundById(138984273283659)
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
 	local addmode=t.addmode
@@ -2431,7 +2455,7 @@ btn("Glorified Rider", function()
 -- -gh 14255556501, 14255554762, 14768693948, 14768701869, 14255528083, 104498387508889, 5699795428
 	local t=reanimate()
 	if type(t)~="table" then return end
-    stopSoundById(125693424013779)
+    stopSoundById(138984273283659)
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
 	local addmode=t.addmode
