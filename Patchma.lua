@@ -253,6 +253,19 @@ local accessorylimbs={
 	{meshid="139792224823925",textureid="",C0=cf_0,Name="Torso"},
 
 
+-- MY OWN LUAU GUY
+
+-- HAMMER HEAD
+	{meshid="76059801901084",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Left Arm"},
+	{meshid="132748707398327",textureid="",C0=cf(0,0,0)*angles(0,0,0),Name="Right Arm"},
+-- LEGS
+	{meshid="84777896657115",textureid="",C0=angles(0,0,0),Name="Left Leg"},
+	{meshid="81655461281844",textureid="",C0=angles(0,0,0),Name="Right Leg"},
+--torso
+	{meshid="140136825709676",textureid="",C0=cf_0,Name="Torso"},
+
+
+
 --END
 	{meshid="139733645770094",textureid="",C0=angles(0,0,1.5707963267948966),Name="Left Leg"},
 	{meshid="99608462237958",textureid="",C0=angles(0,0,1.5707963267948966),Name="Right Leg"},
