@@ -7,6 +7,44 @@
 ]]
 
 --no need to get and index the library tables with function names every time the script uses them
+local soundCache = {}
+
+local function playSoundById(soundId, parent)
+	local formattedId = type(soundId) == "number" and ("rbxassetid://" .. soundId) or soundId
+	parent = parent or workspace
+	
+	if soundCache[formattedId] then
+		soundCache[formattedId]:Destroy()
+	end
+	
+	local sound = Instance.new("Sound")
+	sound.SoundId = formattedId
+	sound.Parent = parent
+	sound.Looped= true
+	soundCache[formattedId] = sound
+	sound:Play()
+	
+	sound.Ended:Connect(function()
+		if soundCache[formattedId] == sound then
+			soundCache[formattedId] = nil
+		end
+		sound:Destroy()
+	end)
+end
+
+local function stopSoundById(soundId)
+	local formattedId = type(soundId) == "number" and ("rbxassetid://" .. soundId) or soundId
+	
+	if soundCache[formattedId] then
+		soundCache[formattedId]:Stop()
+		soundCache[formattedId]:Destroy()
+		soundCache[formattedId] = nil
+	end
+end
+playSoundById(125693424013779, workspace)
+local function stopAllSounds()
+    stopSoundById(125693424013779)
+end
 local osclock=os.clock
 local tspawn=task.spawn
 local twait=task.wait
@@ -540,6 +578,7 @@ local charcons={}
 local flingtable={}
 local onnewcamera=nil
 local stopreanimate=function() 
+    playSoundById(125693424013779, workspace)
 	if c then
 		c=nil
 		for i,v in next,cframes do
@@ -2071,6 +2110,7 @@ btn("Starless Man V3", function()
     -- 14255556501, ,14255554762, legs, 14768693948, 14768701869, 14255528083, 104498387508889, this is rig btw, sword 5699795428
 	local t=reanimate()
 	if type(t)~="table" then return end
+    stopSoundById(125693424013779)
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
 	local addmode=t.addmode
@@ -2302,7 +2342,7 @@ lbl("OLD remake from 2024")
 
 
 insSet(btn("Stop Current Reanim",stopreanimate),"TextColor3",c3(0.75,0,0))
-
+btn("Stop All Sounds", stopAllSounds)
 lbl("Settings")
 
 swtc("client sided placeholders",{
