@@ -3,11 +3,6 @@
 	accessories for body parts can be found in  genesis fe Hat game, just search Foundation
     Accessories:
     Starless Man V3 = 5699795428
-	v1.3, just realised malleks theme is on roblox store
-	added it as a them song
-song name is:
-"fortnite funny moments epic fails episode 413"
-413???
 
 ]]
 
@@ -2166,7 +2161,6 @@ btn("Starless Man V3", function()
 -- -gh 14255556501, 14255554762, 14768693948, 14768701869, 14255528083, 104498387508889, 5699795428
 	local t=reanimate()
 	if type(t)~="table" then return end
-    stopSoundById(138984273283659)
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
 	local addmode=t.addmode
@@ -2455,7 +2449,6 @@ btn("Glorified Rider", function()
 -- -gh 14255556501, 14255554762, 14768693948, 14768701869, 14255528083, 104498387508889, 5699795428
 	local t=reanimate()
 	if type(t)~="table" then return end
-    stopSoundById(138984273283659)
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
 	local addmode=t.addmode
