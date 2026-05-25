@@ -2535,19 +2535,157 @@ LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.1 * sin(sine*5),-1+0.1*sin(sine*5)),an
 		end
 	})
 
-	addmode("q", {
+end)
+
+btn("Combat Ruler", function()
+    -- 14255556501, ,14255554762, legs, 14768693948, 14768701869, 14255528083, 104498387508889, this is rig btw, sword 5699795428
+-- -gh 14255556501, 14255554762, 14768693948, 14768701869, 14255528083, 104498387508889, 5699795428
+	local t=reanimate()
+	if type(t)~="table" then return end
+	local raycastlegs=t.raycastlegs
+	local velbycfrvec=t.velbycfrvec
+	local addmode=t.addmode
+	local getJoint=t.getJoint
+    local getPartFromMesh=t.getPartFromMesh
+    local getPartJoint=t.getPartJoint
+	local RootJoint=getJoint("RootJoint")
+	local RightShoulder=getJoint("Right Shoulder")
+	local LeftShoulder=getJoint("Left Shoulder")
+	local RightHip=getJoint("Right Hip")
+	local LeftHip=getJoint("Left Hip")
+	local Neck=getJoint("Neck")
+    t.setWalkSpeed(6)
+
+    local function ShadeID(ID, Duration)
+		local s = Instance.new("Sound")
+		s.SoundId = "rbxassetid://" .. ID
+		s.Parent = workspace
+		s:Play()
+		task.wait(Duration)
+		s:Destroy()
+
+	end
+	tspawn(function() while c do twait() end ShadeID = emptyfunction end)
+
+	local attackAnimation=nil
+	mouse.Button1Down:Connect(function()
+		if attackAnimation then return end
+		task.spawn(ShadeID, 140228522212884 , 2)
+		attackAnimation=function()
+
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0.8726646259971648,-1.5707963267948966,0)),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,-0.3,-1),angles(2.0943951023931953,-2.6179938779914944,0)),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(0.5,0,0.5),angles(0.5235987755982988,0.8726646259971648,1.5707963267948966)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.7453292519943295,-0.17453292519943295,3.6651914291880923)),deltaTime) 
+RootJoint.C0=Lerp(RootJoint.C0,angles(-1.5707963267948966,0,2.443460952792061),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(-0.8726646259971648,1.5707963267948966,0)),deltaTime) 
+--MW_animatorProgressSave: LeftLeg,-1,0,0,1,50,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,LeftArm,-1,0,0,1,120,0,0,1,-.3,0,0,1,-150,0,0,1,-1,0,0,1,-,0,0,1,RightArm,.5,0,0,1,30,0,0,1,.,0,0,1,50,0,0,1,.5,0,0,1,90,0,0,1,Head,0,0,0,1,-100,0,0,1,1,0,0,1,-10,0,0,1,0,0,0,1,210,0,0,1,Torso,0,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,140,0,0,1,RightLeg,1,0,0,1,-50,0,0,1,-1,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1
+
+
+
+
+		end
+		task.wait(0.1)
+		attackAnimation=function()
+
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(-0.8726646259971648,-1.5707963267948966,0)),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.1,-0.7,0),angles(2.0943951023931953,-2.6179938779914944,0)),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.2,0.5,-0.8),angles(0,1.2217304763960306,1.5707963267948966)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966,0.06981317007977318,2.443460952792061)),deltaTime) 
+RootJoint.C0=Lerp(RootJoint.C0,angles(-1.5707963267948966,0,3.839724354387525),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0.8726646259971648,1.5707963267948966,0)),deltaTime) 
+--MW_animatorProgressSave: LeftLeg,-1,0,0,1,-50,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,LeftArm,-1.1,0,0,1,120,0,0,1,-.7,0,0,1,-150,0,0,1,-,0,0,1,-,0,0,1,RightArm,1.2,0,0,1,,0,0,1,.5,0,0,1,70,0,0,1,-.8,0,0,1,90,0,0,1,Head,0,0,0,1,-90,0,0,1,1,0,0,1,4,0,0,1,0,0,0,1,140,0,0,1,Torso,0,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,220,0,0,1,RightLeg,1,0,0,1,50,0,0,1,-1,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1
+
+
+    	end
+		task.wait(0.3)
+		attackAnimation=nil
+	end)
+
+	addmode("default", {
 		idle = function()
-            t.setWalkSpeed(30)
+		t.setWalkSpeed(5)
+if attackAnimation then return attackAnimation() end            
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.4+0.1*sin((sine+0.4)*-5),0),angles(-0.10471975511965978+0.08726646259971647*sin((sine+0.6)*5),1.3962634015954636+0.08726646259971647*sin(sine*-5),0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1.05,-1-0.1*sin(sine*5),-0.1+0.1*sin((sine+0.4)*5)),angles(-0.17453292519943295+0.08726646259971647*sin((sine+0.4)*5),1.3962634015954636,0)),deltaTime) 
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,0.1 * sin(sine*5),0),angles(-1.4835298641951802+0.03490658503988659*sin((sine+0.4)*-5),0,2.9670597283903604)),deltaTime) 
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1-0.1*sin(sine*5),-0.2+0.1*sin((sine+0.4)*5)),angles(-0.3490658503988659+0.10471975511965978*sin((sine+0.4)*5),-1.3962634015954636,0)),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.4+0.1*sin((sine+0.2)*-5),0),angles(-0.10471975511965978+0.08726646259971647*sin(sine*5),-1.3962634015954636+0.08726646259971647*sin(sine*5),0)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966+0.06981317007977318*sin(sine*-5),0,3.2288591161895095)),deltaTime) 
+--MW_animatorProgressSave: RightArm,1,0,0,1,-6,5,0.6,5,0.4,0.1,0.4,-5,80,5,0,-5,0,0,0,1,0,0,0,1,RightLeg,1.05,0,0,1,-10,5,0.4,5,-1,-.1,0,5,80,0,0,1,-.1,0.1,0.4,5,0,0,0,1,Torso,0,0,0,1,-85,2,0.4,-5,0,0.1,0,5,0,0,0,1,0,0,0,1,170,0,0,1,LeftLeg,-1,0,0,1,-20,6,0.4,5,-1,-.1,0,5,-80,0,0,1,-.2,0.1,0.4,5,0,0,0,1,LeftArm,-1,0,0,1,-6,5,0,5,0.4,0.1,0.2,-5,-80,5,0,5,0,0,0,1,0,0,0,1,Head,0,0,0,1,-90,4,0,-5,1,0,0,1,0,0,0,1,0,0,0,1,185,0,0,1
+
 
 
 		end,
 		walk = function()
-                t.setWalkSpeed(20)
+		t.setWalkSpeed(5)
+if attackAnimation then return attackAnimation() end            
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.4+0.1*sin(sine*10),-0.3 * sin((sine+0.1)*5)),angles(0.08726646259971647+0.5235987755982988*sin((sine+0.1)*5),1.5707963267948966+0.3490658503988659*sin((sine+0.1)*5),0.3490658503988659*sin(sine*5))),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.9-0.2*sin(sine*5),-0.2+0.4*sin(sine*5)),angles(-0.17453292519943295-0.7853981633974483*sin(sine*5),1.53588974175501,0.6981317007977318*sin((sine+0.2)*5))),deltaTime) 
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.2+0.2*sin(sine*10),-0.1 * sin((sine+0.5)*10)),angles(-1.6580627893946132+0.08726646259971647*sin((sine+0.5)*10),0,3.141592653589793-0.05235987755982989*sin((sine+0.1)*5))),deltaTime) 
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.9+0.2*sin(sine*5),-0.2-0.4*sin(sine*5)),angles(-0.17453292519943295+0.7853981633974483*sin(sine*5),-1.53588974175501,0.6981317007977318*sin((sine+0.2)*5))),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.4+0.1*sin(sine*10),0.3 * sin((sine+0.1)*5)),angles(0.08726646259971647-0.5235987755982988*sin((sine+0.1)*5),-1.5707963267948966+0.3490658503988659*sin((sine+0.1)*5),0.3490658503988659*sin(sine*5))),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966-0.10471975511965978*sin((sine+0.6)*10),0,3.141592653589793+0.08726646259971647*sin((sine+0.3)*5))),deltaTime) 
+--MW_animatorProgressSave: RightArm,1,0,0,2,5,30,0.1,5,0.4,0.1,0,10,90,20,0.1,5,0,-0.3,0.1,5,0,20,0,5,RightLeg,1,0,0,2,-10,-45,0,5,-0.9,-0.2,0,5,88,0,0,2,-0.2,0.4,0,5,0,40,0.2,5,Torso,0,0,0,2,-95,5,0.5,10,-0.2,0.2,0,10,0,0,0,2,0,-0.1,0.5,10,180,-3,0.1,5,LeftLeg,-1,0,0,2,-10,45,0,5,-0.9,0.2,0,5,-88,0,0,2,-0.2,-0.4,0,5,0,40,0.2,5,LeftArm,-1,0,0,2,5,-30,0.1,5,0.4,0.1,0,10,-90,20,0.1,5,0,0.3,0.1,5,0,20,0,5,Head,0,0,0,2,-90,-6,0.6,10,1,0,0,2,0,0,0,2,0,0,0,2,180,5,0.3,5
+
+		end,
+		jump = function()
+			local fw, rt = velbycfrvec()
+if attackAnimation then return attackAnimation() end
+RootJoint.C0=Lerp(RootJoint.C0,angles(-1.3962634015954636,0,3.141592653589793),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(0,0.8726646259971648,0.6981317007977318)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.5,-1),angles(-0.3490658503988659,1.5707963267948966,0)),deltaTime) 
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0,-0.8726646259971648,-0.6981317007977318)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636,0,3.141592653589793)),deltaTime) 
+--MW_animatorProgressSave: Torso,0,0,0,1,-80,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1,RainbowGodSword_Handle,-0.2296655774116516,0,0,1,0,0,0,1,0.08438175916671753,0,0,1,90,0,0,1,0.34777572751045227,0,0,1,0,0,0,1,RightArm,1,0,0,1,0,0,0,1,0.5,0,0,1,50,0,0,1,0,0,0,1,40,0,0,1,RightLeg,1,0,0,1,-20,0,0,1,-.5,0,0,1,90,0,0,1,-1,0,0,1,0,0,0,1,LeftLeg,-1,0,0,1,0,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,LeftArm,-1,0,0,1,0,0,0,1,0.5,0,0,1,-50,0,0,1,0,0,0,1,-40,0,0,1 ,Head,0,0,0,1,-80,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1
+
+		end,
+		fall = function()
+			local fw, rt = velbycfrvec()
+if attackAnimation then return attackAnimation() end
+RootJoint.C0=Lerp(RootJoint.C0,angles(-1.7453292519943295,0,3.141592653589793),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,1,0),angles(0,0.8726646259971648,2.6878070480712677)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.5,-1),angles(-0.3490658503988659,1.5707963267948966,0)),deltaTime) 
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,1,0),angles(0,-0.8726646259971648,-2.6878070480712677)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) 
+--MW_animatorProgressSave: Torso,0,0,0,1,-100,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1,RainbowGodSword_Handle,-0.2296655774116516,0,0,1,0,0,0,1,0.08438175916671753,0,0,1,90,0,0,1,0.34777572751045227,0,0,1,0,0,0,1,RightArm,1,0,0,1,0,0,0,1,1,0,0,1,50,0,0,1,0,0,0,1,154,0,0,1,RightLeg,1,0,0,1,-20,0,0,1,-.5,0,0,1,90,0,0,1,-1,0,0,1,0,0,0,1,LeftLeg,-1,0,0,1,0,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,LeftArm,-1,0,0,1,0,0,0,1,1,0,0,1,-50,0,0,1,0,0,0,1,-154,0,0,1 ,Head,0,0,0,1,-90,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1
+
+
+		end
+	})
+	   	addmode("r", {
+		idle = function()
+            t.setWalkSpeed(26)
+	if attackAnimation then return attackAnimation() end
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.4+0.1*sin((sine+0.4)*-5),0),angles(-0.10471975511965978+0.08726646259971647*sin((sine+0.6)*5),1.3962634015954636+0.08726646259971647*sin(sine*-5),0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1.05,-1-0.1*sin(sine*5),-0.1+0.1*sin((sine+0.4)*5)),angles(-0.17453292519943295+0.08726646259971647*sin((sine+0.4)*5),1.3962634015954636,0)),deltaTime) 
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,0.1 * sin(sine*5),0),angles(-1.4835298641951802+0.03490658503988659*sin((sine+0.4)*-5),0,2.9670597283903604)),deltaTime) 
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1-0.1*sin(sine*5),-0.2+0.1*sin((sine+0.4)*5)),angles(-0.3490658503988659+0.10471975511965978*sin((sine+0.4)*5),-1.3962634015954636,0)),deltaTime) 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.4+0.1*sin((sine+0.2)*-5),0),angles(-0.10471975511965978+0.08726646259971647*sin(sine*5),-1.3962634015954636+0.08726646259971647*sin(sine*5),0)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966+0.06981317007977318*sin(sine*-5),0,3.2288591161895095)),deltaTime) 
+--MW_animatorProgressSave: RightArm,1,0,0,1,-6,5,0.6,5,0.4,0.1,0.4,-5,80,5,0,-5,0,0,0,1,0,0,0,1,RightLeg,1.05,0,0,1,-10,5,0.4,5,-1,-.1,0,5,80,0,0,1,-.1,0.1,0.4,5,0,0,0,1,Torso,0,0,0,1,-85,2,0.4,-5,0,0.1,0,5,0,0,0,1,0,0,0,1,170,0,0,1,LeftLeg,-1,0,0,1,-20,6,0.4,5,-1,-.1,0,5,-80,0,0,1,-.2,0.1,0.4,5,0,0,0,1,LeftArm,-1,0,0,1,-6,5,0,5,0.4,0.1,0.2,-5,-80,5,0,5,0,0,0,1,0,0,0,1,Head,0,0,0,1,-90,4,0,-5,1,0,0,1,0,0,0,1,0,0,0,1,185,0,0,1
+
+
+
+		end,
+		walk = function()
+                t.setWalkSpeed(26)
+				if attackAnimation then return attackAnimation() end
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.4,1 * sin(sine*-10)),angles(0.3490658503988659+2.2689280275926285*sin(sine*10),-1.3962634015954636,0)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636+0.17453292519943295*sin((sine+0.4)*-20),0,3.141592653589793+0.08726646259971647*sin((sine+0.1)*-10))),deltaTime) 
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,0.4 * sin((sine+0.4)*-20),0.6 * sin((sine+0.45)*-20)),angles(-1.9198621771937625+0.08726646259971647*sin(sine*20),0,3.141592653589793+0.08726646259971647*sin(sine*10))),deltaTime) 
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1+0.5*sin((sine+0.1)*-10),-0.3+0.4*sin(sine*10)),angles(-0.17453292519943295-1.7453292519943295*sin(sine*10),-1.3962634015954636,0)),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.4,1 * sin(sine*10)),angles(0.3490658503988659+2.2689280275926285*sin(sine*-10),1.3962634015954636,0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.5*sin((sine+0.1)*10),-0.3+0.4*sin(sine*-10)),angles(-0.17453292519943295+1.7453292519943295*sin(sine*10),1.3962634015954636,0)),deltaTime) 
+--MW_animatorProgressSave: LeftArm,-1,0,0,1,20,130,0,10,0.4,0,0,1,-80,0,0,1,0,1,0,-10,0,0,0,1,Head,0,0,0,1,-80,10,0.4,-20,1,0,0,1,0,0,0,1,0,0,0,1,180,5,0.1,-10,Torso,0,0,0,1,-110,5,0,20,0,0.4,0.4,-20,0,0,0,1,0,.6,0.45,-20,180,5,0,10,LeftLeg,-1,0,0,1,-10,-100,0,10,-1,.5,0.1,-10,-80,0,0,1,-.3,0.4,0,10,0,0,0,1,RightArm,1,0,0,4,20,130,0,-10,.4,0,0,4,80,0,0,4,0,1,0,10,,0,0,4,RightLeg,1,0,0,1,-10,100,0,10,-1,.5,0.1,10,80,0,0,1,-.3,0.4,0,-10,0,0,0,1
 
 
 		end
 
-    })
+	})
+
 end)
 
 
