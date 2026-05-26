@@ -161,7 +161,7 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme = {
-	guiTitle = "PatchMallek V1.1",
+	guiTitle = "PatchMallek V1.2",
 	windowTitleColor = Color3.fromRGB(0, 180, 255),
 	windowTopColor = Color3.fromRGB(15, 20, 35),
 	windowBottomColor = Color3.fromRGB(25, 35, 60),
